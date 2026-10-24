@@ -1,0 +1,191 @@
+<!DOCTYPE html><html lang="hy"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>Boeing — Ռիսկերի կառավարում</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Armenian:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F3F6FB;--sf:#fff;--ink:#0E1A33;--mut:#51607e;--navy:#0B1B3A;--blue:#1D439C;--sky:#2E86DE;--ln:#d8e0ee;--g:#2E9E5B;--y:#F2C230;--o:#F08A24;--r:#D93A3A;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#0A1226;--sf:#111d3a;--ink:#E8EEFB;--mut:#9fb0d3;--ln:#223259}}
+:root[data-theme=dark]{--bg:#0A1226;--sf:#111d3a;--ink:#E8EEFB;--mut:#9fb0d3;--ln:#223259}
+html{scroll-behavior:smooth;scroll-padding-top:calc(60px + env(safe-area-inset-top,0px))}
+body{margin:0;font:400 16px/1.65 'Noto Sans Armenian',system-ui,sans-serif;background:var(--bg);color:var(--ink)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--navy);z-index:30}
+*{box-sizing:border-box}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--navy);display:flex;gap:4px;overflow-x:auto;padding:0 12px}
+nav b{color:#fff;padding:14px 12px 14px 4px;white-space:nowrap;letter-spacing:.12em}
+nav a{color:#b9c8ea;text-decoration:none;padding:14px 12px;white-space:nowrap;font-size:14px;transition:color .2s}
+nav a:hover,nav a.on{color:#fff}nav a.on{box-shadow:inset 0 -3px var(--sky)}
+#bar{position:fixed;top:0;left:0;height:3px;background:var(--sky);width:0;z-index:40}
+header{background:radial-gradient(120% 90% at 80% 0,#1D439C 0,#0B1B3A 60%);color:#fff;padding:72px 20px 40px;position:relative;overflow:hidden;min-height:78vh;display:flex;flex-direction:column;justify-content:center}
+header h1{font-size:clamp(34px,7vw,76px);line-height:1.08;margin:0 0 14px;font-weight:800;max-width:900px}
+header p{max-width:640px;color:#c5d3f2;font-size:18px;margin:0 0 28px}
+.plane{position:absolute;top:14%;left:-260px;width:240px;animation:fly 9s linear infinite;opacity:.9}
+.plane2{top:30%;width:120px;opacity:.35;animation-duration:14s;animation-delay:-5s}
+@keyframes fly{to{transform:translateX(calc(100vw + 560px)) translateY(-40px)}}
+.stats{display:flex;flex-wrap:wrap;gap:12px 36px}.stats div{border-left:3px solid var(--sky);padding-left:12px}
+.stats strong{display:block;font-size:34px;font-weight:800}.stats span{color:#b9c8ea;font-size:14px}
+.cta{display:inline-block;margin-top:26px;background:var(--sky);color:#fff;padding:13px 26px;border-radius:30px;text-decoration:none;font-weight:600;transition:transform .2s}.cta:hover{transform:translateY(-3px)}
+section{max-width:1040px;margin:0 auto;padding:72px 20px 8px}
+h2{font-size:clamp(26px,4vw,40px);margin:0 0 8px;color:var(--blue)}
+@media(prefers-color-scheme:dark){h2{color:#7fb2ff}}
+.lead{color:var(--mut);max-width:720px;margin:0 0 26px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px}
+.card{background:var(--sf);border:1px solid var(--ln);border-radius:14px;padding:20px;cursor:pointer;transition:transform .25s,border-color .25s}
+.card:hover{transform:translateY(-6px);border-color:var(--sky)}
+.card svg{width:48px;height:48px;stroke:var(--sky);fill:none;stroke-width:2}
+.card h3{margin:8px 0 4px;font-size:18px}.card p{margin:0;color:var(--mut);font-size:15px;max-height:0;overflow:hidden;transition:max-height .4s}
+.card.open p{max-height:260px;margin-top:8px}
+.note{background:var(--blue);color:#fff;border-radius:14px;padding:18px 22px;margin-top:18px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
+button{font:inherit;cursor:pointer;border:1px solid var(--ln);background:var(--sf);color:var(--ink);border-radius:24px;padding:8px 16px;transition:.2s}
+button:hover{border-color:var(--sky)}button.on{background:var(--blue);border-color:var(--blue);color:#fff}
+button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid var(--sky);outline-offset:2px}
+.panel{background:var(--sf);border:1px solid var(--ln);border-radius:16px;padding:24px}
+.panel h3{margin:0 0 8px;font-size:22px}
+.fig{font-size:44px;font-weight:800;color:var(--sky);line-height:1}
+.pop{animation:pop .45s}@keyframes pop{from{opacity:0;transform:translateY(12px)}}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:24px}@media(max-width:720px){.two{grid-template-columns:1fr}}
+.tw{overflow-x:auto}table{border-collapse:collapse;width:100%;font-size:14px}
+th,td{padding:10px;border-bottom:1px solid var(--ln);text-align:center}th:first-child,td:first-child{text-align:left}
+td.h,th.h{background:rgba(46,134,222,.18)}td.y{color:var(--g);font-weight:800}
+tr:hover td{background:rgba(46,134,222,.1)}
+.f{font:600 15px/1.5 inherit;background:rgba(46,134,222,.12);border-left:4px solid var(--sky);padding:10px 14px;border-radius:8px;margin:10px 0}
+input[type=range]{width:100%;accent-color:var(--sky)}label{display:block;font-size:14px;color:var(--mut);margin-top:8px}
+.res{font-size:46px;font-weight:800;line-height:1.1;transition:color .3s}.badge{display:inline-block;padding:3px 14px;border-radius:20px;color:#111;font-weight:600;transition:background .3s}
+.g{background:var(--g)}.y{background:var(--y)}.o{background:var(--o)}.r{background:var(--r);color:#fff}
+.mx{display:grid;grid-template-columns:repeat(5,1fr);gap:4px;position:relative;max-width:360px}
+.mx i{aspect-ratio:1;border-radius:6px;display:grid;place-items:center;font:600 13px/1 inherit;color:#111;font-style:normal;cursor:pointer}
+.dot{position:absolute;width:20%;aspect-ratio:1;display:grid;place-items:center;transition:left .7s cubic-bezier(.6,-.3,.3,1.3),top .7s cubic-bezier(.6,-.3,.3,1.3);pointer-events:none}
+.dot::after{content:"";width:62%;height:62%;border-radius:50%;background:#fff;border:4px solid var(--navy);box-shadow:0 0 0 0 #fff;animation:pl 1.6s infinite}
+@keyframes pl{70%{box-shadow:0 0 0 12px transparent}}
+.bt{display:grid;grid-template-columns:1fr 1.1fr 1fr;gap:10px;align-items:stretch}@media(max-width:720px){.bt{grid-template-columns:1fr}}
+.bt>div{background:rgba(46,134,222,.1);border-radius:12px;padding:14px;font-size:14px}
+.bt .top{background:var(--r);color:#fff;font-weight:600;display:grid;place-items:center;text-align:center;animation:tp 2.4s infinite}
+@keyframes tp{50%{transform:scale(1.04)}}
+.ctl{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}.ctl button.on{background:var(--g);border-color:var(--g)}
+.meter{height:14px;border-radius:8px;background:var(--ln);overflow:hidden}.meter div{height:100%;background:var(--sky);width:0;transition:width .7s}
+.rec{display:flex;gap:12px;align-items:flex-start;padding:14px;margin-bottom:8px;background:var(--sf);border:1px solid var(--ln);border-radius:12px;cursor:pointer;transition:.2s}
+.rec:hover{border-color:var(--sky)}.rec.on{background:rgba(46,158,91,.15);border-color:var(--g)}
+.rec span{flex:none;width:26px;height:26px;border-radius:50%;border:2px solid var(--sky);display:grid;place-items:center;font-weight:800;font-size:13px}.rec.on span{background:var(--g);border-color:var(--g);color:#fff}
+.det{margin-top:22px;border-top:2px solid var(--ln);padding-top:10px}
+.det details{border-bottom:1px solid var(--ln);padding:4px 0}
+.det summary{cursor:pointer;font-weight:600;padding:10px 0;list-style:none;display:flex;gap:12px;align-items:center}
+.det summary::-webkit-details-marker{display:none}
+.det summary i{flex:none;width:28px;height:28px;border-radius:50%;background:var(--blue);color:#fff;display:grid;place-items:center;font:800 13px/1 inherit;font-style:normal}
+.det summary::after{content:"+";margin-left:auto;color:var(--sky);font-size:22px;transition:transform .3s}
+.det details[open] summary::after{transform:rotate(45deg)}
+.det .bd{padding:0 0 14px 40px;animation:pop .4s}.det .bd p{margin:6px 0}
+.cp{display:grid;grid-template-columns:130px 1fr 70px;gap:10px;align-items:center;margin:6px 0;font-size:14px}
+footer{text-align:center;color:var(--mut);padding:48px 20px 32px;font-size:14px}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style></head><body>
+<div id="bar"></div>
+<nav><b>BOEING</b><a href="#co">Ընկերություն</a><a href="#rk">7 ռիսկ</a><a href="#mx">Մատրից</a><a href="#me">6 մեթոդ</a><a href="#cn">Եզրակացություն</a></nav>
+<header>
+<svg class="plane" viewBox="0 0 200 80" fill="#fff"><path d="M6 40 L150 33 Q196 40 150 47Z"/><path d="M84 37 62 4 78 4 118 35ZM84 43 62 76 78 76 118 45Z" opacity=".85"/><path d="M20 38 6 22 16 22 36 36Z"/></svg>
+<svg class="plane plane2" viewBox="0 0 200 80" fill="#fff"><path d="M6 40 L150 33 Q196 40 150 47Z"/><path d="M84 37 62 4 78 4 118 35ZM84 43 62 76 78 76 118 45Z"/></svg>
+<h1>The Boeing Company. Ռիսկերի կառավարում</h1>
+<p>7 պատմական ռիսկ և դրանց գնահատման 6 մեթոդ՝ քայլ առ քայլ, հաշվարկներով՝ որոնք կարող եք ինքներդ փոխել։</p>
+<div class="stats"><div><strong data-n="7">0</strong><span>պատմական ռիսկ</span></div><div><strong data-n="6">0</strong><span>գնահատման մեթոդ</span></div><div><strong data-n="346">0</strong><span>զոհ MCAS-ի պատճառով</span></div><div><strong data-n="20" data-s="+ մլրդ $">0</strong><span>կորուստ 737 MAX-ից</span></div></div>
+<div><a class="cta" href="#co">Սկսել ճանապարհը</a></div>
+</header>
+
+<section id="co"><h2>1. Ով է Boeing-ը</h2><p class="lead">Ամերիկյան ավիատիեզերական կորպորացիա, աշխարհի խոշորագույն արտադրողներից մեկը (NYSE: BA)։ Սեղմեք քարտի վրա։</p>
+<div class="grid">
+<div class="card"><svg viewBox="0 0 48 48"><path d="M4 26 40 20Q46 24 40 28L4 26M20 24 14 8h5l12 15M20 28 14 42h5l12-14"/></svg><h3>Առևտրային ինքնաթիռներ</h3><p>737, 767, 777, 787։ Նախագծում, արտադրություն, առաքում։ Կրիտիկական են թռիչքային անվտանգությունը և FAA/EASA հավաստագրումը։</p></div>
+<div class="card"><svg viewBox="0 0 48 48"><path d="M24 4 6 12v12c0 10 8 17 18 20 10-3 18-10 18-20V12z"/><path d="m16 24 6 6 11-12"/></svg><h3>Պաշտպանություն, տիեզերք, անվտանգություն</h3><p>KC-46, T-7A, VC-25B (Air Force One), MQ-25։ Առաջնային են ֆիքսված գնով պայմանագրերի ծախսերի վերահսկումը։</p></div>
+<div class="card"><svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="7"/><path d="M24 4v7M24 37v7M4 24h7M37 24h7M10 10l5 5M33 33l5 5M38 10l-5 5M15 33l-5 5"/></svg><h3>Համաշխարհային ծառայություններ</h3><p>Ինժեներական սպասարկում, պահեստամասեր, ուսուցում և թվային լոգիստիկա։</p></div></div>
+<div class="note"><b>Ինչու է ավիացիան առանձնահատուկ։</b> Աննշան շեղումը կարող է հանգեցնել ողբերգության, համաշխարհային grounding-ի, միլիարդների կորստի և հեղինակության կործանման։</div></section>
+
+<section id="rk"><h2>2. Յոթ պատմական ռիսկ</h2><p class="lead">Ընտրեք ռիսկը՝ տեսնելու համար, թե ինչ է տեղի ունեցել։</p>
+<div class="chips" id="chips"></div><div class="panel" id="rp"></div></section>
+
+<section id="mx"><h2>3. Ո՞ր մեթոդը՝ ո՞ր ռիսկի համար</h2><p class="lead">Համապատասխանության մատրից։ Սեղմեք մեթոդի վրա՝ անցնելու դրա վերլուծությանը։</p>
+<div class="panel tw"><table id="cm"></table></div></section>
+
+<section id="me"><h2>4. Վեց մեթոդ՝ գործնականում</h2><p class="lead">Բոլոր հաշվարկները Boeing-ի օրինակներով են։ Փոխեք արժեքները և տեսեք արդյունքը։</p>
+<div class="chips" id="mt"></div>
+<div class="panel" id="m0"><h3>4.1 Որակական գնահատում (R2)</h3><p>Ռիսկը դասակարգվում է մակարդակներով՝ փորձագիտական դատողությամբ։</p><div class="f">R = max(L, I)</div><div class="two"><div><label>Հավանականություն L: <b id="a1"></b><input type="range" min="1" max="5" id="l1"></label><label>Ազդեցություն I: <b id="a2"></b><input type="range" min="1" max="5" id="i1"></label><div class="ctl"><button data-p="1,4,5">Սկզբնական</button><button data-p="1,2,5">Մնացորդային</button></div></div><div><div class="res" id="r1"></div><p id="t1"></p></div></div><p>Վերահսկողությունները նվազեցնում են L-ը 4-ից 2, բայց I=5 պատճառով R-ը մնում է 5։</p></div>
+<div class="panel" id="m1"><h3>4.2 Կիսաքանակական գնահատում (R2)</h3><div class="f">RS = P × I (1–25)</div><div class="two"><div><label>P: <b id="a3"></b><input type="range" min="1" max="5" id="p2"></label><label>I: <b id="a4"></b><input type="range" min="1" max="5" id="i2"></label><div class="ctl"><button data-p="2,4,5">Սկզբնական 4×5</button><button data-p="2,2,3">Մնացորդային 2×3</button></div></div><div><div class="res" id="r2"></div><span class="badge" id="b2"></span><div class="meter" style="margin-top:12px"><div id="m2"></div></div></div></div><div class="f">Նվազում = (20 − 6) / 20 × 100% = 70%</div></div>
+<div class="panel" id="m2p"><h3>4.3 Հավանականություն–ազդեցություն մատրից (R2)</h3><p>Սեղմեք ցանկացած վանդակի կամ գործարկեք շարժումը։</p><div class="ctl"><button data-p="3,4,5">Սկզբնական (20)</button><button data-p="3,2,3">Մնացորդային (6)</button></div><div class="mx" id="mxg"><div class="dot" id="dt"></div></div><p id="t3"></p></div>
+<div class="panel" id="m3"><h3>4.4 Bow-Tie վերլուծություն (R2)</h3><div class="bt"><div><b>Սպառնալիքներ</b><br>• Արտադրական հրահանգից շեղում<br>• Մատակարարի դետալի թերություն</div><div class="top">TOP EVENT. Որակի թերությունը չի հայտնաբերվում և անցնում է հաջորդ փուլ</div><div><b>Հետևանքներ</b><br>• Մատակարարման ուշացում<br>• Վերանորոգման ծախս<br>• FAA ստուգումներ</div></div><p>Միացրեք վերահսկողությունները՝</p><div class="ctl" id="cl"></div><div class="f">C = վերահսկողություններ / պահանջվող × 100% = <b id="cv"></b></div><div class="meter"><div id="cm2"></div></div></div>
+<div class="panel" id="m4"><h3>4.5 Սցենարային վերլուծություն (R3)</h3><div class="ctl" id="sc"></div><div id="sd" class="pop"></div></div>
+<div class="panel" id="m5"><h3>4.6 Քանակական գնահատում (R7)</h3><div class="f">EL = P × L</div><div class="two"><div><label>Հավանականություն P: <b id="a5"></b>%<input type="range" min="0" max="100" value="30" id="p6"></label><label>Կորուստ L: <b id="a6"></b> մլն $<input type="range" min="50" max="500" step="10" value="250" id="l6"></label><label>Վերահսկողության արդյունք: −<b id="a7"></b>%<input type="range" min="0" max="80" value="40" id="d6"></label></div><div><p>Սկզբնական EL</p><div class="res" id="e1"></div><div class="meter"><div id="x1" style="background:var(--r)"></div></div><p>Մնացորդային EL</p><div class="res" id="e2" style="color:var(--g)"></div><div class="meter"><div id="x2" style="background:var(--g)"></div></div><p>ΔEL = <b id="e3"></b> մլն $</p></div></div></div></section>
+
+<section id="cn"><h2>5. Եզրակացություն</h2><p class="lead">Ոչ մի մեթոդ առանձին լիարժեք պաշտպանություն չի տալիս։ Դրանց համադրումը տալիս է ռիսկերի 360° տեսանելիություն՝ որակական նկարագրությունից մինչև ճշգրիտ ֆինանսական հաշվարկ։</p>
+<h3>7 առաջարկ ղեկավարությանը</h3><div class="meter" style="margin-bottom:14px"><div id="rm"></div></div><div id="rc"></div>
+<div class="note" id="done" style="display:none;text-align:center;font-weight:600">Բոլոր 7 քայլերն ընդունված են։ Boeing-ի ռիսկերը վերահսկվում են։</div></section>
+<footer>Աղբյուր՝ Boeing-ի ռիսկերի կառավարման վերլուծական զեկույց</footer>
+
+<script>
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const R=[["R1","737 MAX-ի MCAS","2018–2019 թթ. Lion Air և Ethiopian Airlines ավիավթարները՝ MCAS-ի նախագծման և սենսորների թերությունների պատճառով։ 737 MAX-ը 20 ամիս չթռավ։","346","զոհ"],
+["R2","Արտադրության և հավաքման որակ","Alaska Airlines 1282 (2024)՝ դռան խցանը անջատվեց թռիչքի ժամանակ, և 787-ի հավաքման թերություններ (2020–2022)։ FAA-ն սահմանափակեց արտադրությունը։","2024","Alaska 1282"],
+["R3","Մատակարարման շղթա","Spirit AeroSystems-ի որակի թերություններ, շարժիչների ուշացումներ, ռուսական տիտանի ներկրման դադարեցում։","3","խափանման աղբյուր"],
+["R4","Սերտիֆիկացման ուշացում","777X, 737-7 և 737-10 մոդելների հաստատման հետաձգումներ FAA-ի կողմից։ Առաքումները տեղափոխվեցին 2027-ի։","4.9 մլրդ $","վնաս 2025-ի Q3-ում"],
+["R5","Գործադուլ և աշխատուժ","2024 թ. IAM-ի 33 հազար աշխատողի գործադուլը լիովին կանգնեցրեց 737, 767 և 777 արտադրությունը։","53","օր գործադուլ"],
+["R6","Աշխարհաքաղաքական և սակագնային","Չինաստանը կասեցրեց նոր օդանավերի ընդունումը (2025), Ռուսաստանի շուկան կորավ, ավելացան սակագները։","3","շուկայական հարված"],
+["R7","Ֆիքսված գնով պայմանագրերի գերածախս","KC-46, T-7A, VC-25B և MQ-25 ծրագրերում բազմամյա reach-forward կորուստներ։","4","ծրագիր"]];
+const M=["Qualitative","Semi-Quantitative","Probability–Impact Matrix","Bow-Tie","Scenario","Quantitative"];
+const C=["1111111","1111111","1111111","1111111","0011110","1001111"];
+const Z=s=>s<=4?["Ցածր","g","#2E9E5B"]:s<=9?["Միջին","y","#F2C230"]:s<=16?["Բարձր","o","#F08A24"]:["Շատ բարձր","r","#D93A3A"];
+// stats counters
+const cnt=e=>{let n=+e.dataset.n,t=0;const k=setInterval(()=>{t+=n/40;e.textContent=Math.min(Math.round(t),n)+(e.dataset.s||"");if(t>=n)clearInterval(k)},30)};
+$$("[data-n]").forEach(cnt);
+// cards
+$$(".card").forEach(c=>c.onclick=()=>c.classList.toggle("open"));
+// risks
+$("#chips").innerHTML=R.map((r,i)=>`<button data-i="${i}">${r[0]}</button>`).join("");
+const sr=i=>{const r=R[i];$$("#chips button").forEach((b,j)=>b.classList.toggle("on",i==j));$("#rp").innerHTML=`<div class="pop two"><div><h3>${r[0]}. ${r[1]}</h3><p>${r[2]}</p></div><div><div class="fig">${r[3]}</div><p>${r[4]}</p></div></div>`};
+$("#chips").onclick=e=>e.target.dataset.i&&sr(+e.target.dataset.i);sr(0);
+// compliance
+$("#cm").innerHTML="<tr><th>Մեթոդ"+R.map(r=>`<th>${r[0]}`).join("")+"<th>Քանակ</tr>"+M.map((m,i)=>`<tr><td><a href="#" data-m="${i}">${m}</a>`+[...C[i]].map(c=>`<td class="${c==1?"y":""}">${c==1?"✔":"—"}`).join("")+`<td>${[...C[i]].filter(c=>c==1).length}</tr>`).join("");
+$("#cm").onclick=e=>{if(e.target.dataset.m){e.preventDefault();tab(+e.target.dataset.m);$("#me").scrollIntoView()}};
+// tabs
+const P=["m0","m1","m2p","m3","m4","m5"];
+$("#mt").innerHTML=M.map((m,i)=>`<button data-t="${i}">4.${i+1} ${m}</button>`).join("");
+const tab=i=>{P.forEach((p,j)=>$("#"+p).style.display=i==j?"":"none");$$("#mt button").forEach((b,j)=>b.classList.toggle("on",i==j));$("#"+P[i]).classList.remove("pop");void $("#"+P[i]).offsetWidth;$("#"+P[i]).classList.add("pop");if(i==3)bt();if(i==5)q()};
+$("#mt").onclick=e=>e.target.dataset.t&&tab(+e.target.dataset.t);
+const set=(id,v)=>{$("#"+id).value=v};
+// 4.1
+const u1=()=>{const l=+$("#l1").value,i=+$("#i1").value,r=Math.max(l,i);$("#a1").textContent=l;$("#a2").textContent=i;$("#r1").textContent="R = "+r;$("#r1").style.color=Z(r*r)[2]};
+["l1","i1"].forEach(x=>$("#"+x).oninput=u1);u1();
+// 4.2
+const u2=()=>{const p=+$("#p2").value,i=+$("#i2").value,s=p*i,z=Z(s);$("#a3").textContent=p;$("#a4").textContent=i;$("#r2").textContent=s;$("#b2").textContent=z[0];$("#b2").className="badge "+z[1];$("#m2").style.width=s/25*100+"%";$("#m2").style.background=z[2]};
+["p2","i2"].forEach(x=>$("#"+x).oninput=u2);u2();
+// 4.3
+const gx=$("#mxg");for(let p=5;p>=1;p--)for(let i=1;i<=5;i++){const e=document.createElement("i");e.textContent=p*i;e.style.background=Z(p*i)[2];e.onclick=()=>mv(p,i);gx.appendChild(e)}
+const mv=(p,i)=>{const d=$("#dt");d.style.left=(i-1)*20+"%";d.style.top=(5-p)*20+"%";const s=p*i;$("#t3").innerHTML=`P=${p}, I=${i}, RS=<b>${s}</b>՝ ${Z(s)[0]} գոտի`+(s==6?`։ Կարմիրից դեղին՝ 70% բարելավում։`:"")};mv(4,5);
+// buttons presets
+$$("[data-p]").forEach(b=>b.onclick=()=>{const[t,a,c]=b.dataset.p.split(",").map(Number);if(t==1){set("l1",a);set("i1",c);u1()}if(t==2){set("p2",a);set("i2",c);u2()}if(t==3)mv(a,c)});
+// 4.4
+const CT=["ISO/AS9100","Quality Gates","Traceability","Անկախ աուդիտ"];let on=[1,1,0,0];
+$("#cl").innerHTML=CT.map((c,i)=>`<button data-c="${i}" class="${on[i]?"on":""}">${c}</button>`).join("");
+const bt=()=>{const n=on.filter(Boolean).length;$("#cv").textContent=n/4*100+"%";$("#cm2").style.width=n/4*100+"%"};
+$("#cl").onclick=e=>{const i=e.target.dataset.c;if(i!=null){on[i]^=1;e.target.classList.toggle("on");bt()}};
+// 4.5
+const S=[["A (Best-Case)","Մինչև 2 շաբաթ","Չնչին ճշգրտում","Օպերատիվ վերապլանավորում","g"],["B (Base-Case)","2–8 շաբաթ","Նկատելի ուշացում","Այլընտրանքային մատակարար","y"],["C (Worst-Case)","8+ շաբաթ","Էական դանդաղում / կանգ","Ծրագրի վերակազմավորում","r"]];
+$("#sc").innerHTML=S.map((s,i)=>`<button data-s="${i}">Սցենար ${s[0]}</button>`).join("");
+$("#sc").onclick=e=>{const i=e.target.dataset.s;if(i==null)return;$$("#sc button").forEach((b,j)=>b.classList.toggle("on",i==j));const s=S[i];$("#sd").className="pop";void $("#sd").offsetWidth;$("#sd").className="pop";$("#sd").innerHTML=`<span class="badge ${s[4]}">${s[0]}</span><p>Տևողություն՝ <b>${s[1]}</b><br>Արտադրական ազդեցություն՝ <b>${s[2]}</b><br>Արձագանք՝ <b>${s[3]}</b></p><p>Այլընտրանքային մատակարարների նախնական որակավորումը և պահուստները Worst-Case-ը տեղափոխում են դեպի Base-Case։</p>`};
+$("#sc button").click();
+// 4.6
+const q=()=>{const p=+$("#p6").value/100,l=+$("#l6").value,d=+$("#d6").value,e=p*l,r=e*(1-d/100);$("#a5").textContent=p*100;$("#a6").textContent=l;$("#a7").textContent=d;$("#e1").textContent=e.toFixed(0)+" մլն $";$("#e2").textContent=r.toFixed(0)+" մլն $";$("#e3").textContent=(e-r).toFixed(0);$("#x1").style.width=e/500*100+"%";$("#x2").style.width=r/500*100+"%"};
+["p6","l6","d6"].forEach(x=>$("#"+x).oninput=q);q();
+const T=["Հաշվարկման բանաձև","Քայլ առ քայլ հաշվարկ","Ռիսկի քանակական արդյունք","Ռիսկի մակարդակի մեկնաբանություն","Ռիսկի նվազեցման և կառավարման միջոցառումներ","Մնացորդային ռիսկի հաշվարկ","Սկզբնական և մնացորդային ռիսկերի համեմատություն","Եզրակացություն և առաջարկություններ"];
+const cp=(a,x,b,y,u)=>`<div class="cp"><span>Սկզբնական</span><div class="meter"><div style="width:${x}%;background:var(--r)"></div></div><b>${a}</b></div><div class="cp"><span>Մնացորդային</span><div class="meter"><div style="width:${y}%;background:var(--g)"></div></div><b>${b}</b></div>`;
+const ms="<ul><li>Quality Gates համակարգ արտադրության կրիտիկական փուլերում</li><li>Բաղադրիչների և հավաքման հետագծելիություն (Traceability)</li><li>Մատակարարների որակի պարբերական անկախ աուդիտներ</li></ul>";
+const D=[
+["<div class='f'>R = max(L, I)</div><p>L-ը հավանականությունն է (1–5), I-ը՝ ազդեցությունը (1–5), R-ը՝ ամփոփ որակական մակարդակը։ Օրինակային ռիսկ՝ R2 (արտադրության և հավաքման որակ)։</p>","<p><b>Քայլ 1.</b> L = 4 (Բարձր), հաշվի առնելով Alaska Airlines 1282 միջադեպը։</p><p><b>Քայլ 2.</b> I = 5 (Շատ բարձր), քանի որ թռիչքային անվտանգության թերությունը կրիտիկական է։</p><p><b>Քայլ 3.</b> R_initial = max(4, 5) = 5։</p>","<p>R_initial = <b>5</b>՝ շատ բարձր առաջնահերթության ռիսկ։</p>","<p>5-ը ամենաբարձր մակարդակն է։ max-կանոնը թույլ չի տալիս, որ միջին հավանականությունը «թաքցնի» թռիչքային անվտանգության աղետալի ազդեցությունը։</p>",ms,"<p>Վերահսկողությունների ներդրումից հետո L = 2 (Ցածր), I = 5 (Շատ բարձր)։</p><p>R_residual = max(2, 5) = <b>5</b>։</p>","<p>L՝ 4 → 2, I՝ 5 → 5, R՝ 5 → 5։</p>"+cp(5,100,5,100)+"<p>Չնայած ամփոփ մակարդակը մնում է 5 (I=5 պատճառով), հավանականության կրճատումը 4-ից 2 էապես նվազեցնում է իրական պատահարի վտանգը։</p>","<p>Որակական մեթոդը արագ է և հասկանալի, բայց երբ I=5, R-ը չի փոխվում։ Այդ պատճառով այն պետք է լրացնել կիսաքանակական և քանակական մեթոդներով, ինչպես հաջորդ բաժիններում։</p>"],
+["<div class='f'>RS = P × I</div><p>P-ն հավանականության, I-ն ազդեցության միավորն է (1–5), RS ∈ [1; 25]։ Գոտիներ՝ 1–4 ցածր, 5–9 միջին, 10–16 բարձր, 17–25 շատ բարձր։</p>","<p><b>Քայլ 1.</b> P = 4։</p><p><b>Քայլ 2.</b> I = 5։</p><p><b>Քայլ 3.</b> RS_initial = 4 × 5 = 20։</p>","<p>RS_initial = <b>20 / 25</b></p>","<p>20-ը 17–25 գոտում է՝ <b>Շատ բարձր ռիսկ</b>։ Այն պահանջում է առաջնահերթ կառավարում։</p>","<p>Որակի վերահսկման բազմաստիճան համակարգ և թերությունների ուղղիչ գործողությունների (Corrective Action Tracking) պարտադիր վերահսկում։</p>","<p>Միջոցառումներից հետո P = 2, I = 3։</p><p>RS_residual = 2 × 3 = <b>6</b> (Միջին ռիսկ)։</p>",cp(20,80,6,24)+"<div class='f'>Նվազում = [(20 − 6) / 20] × 100% = 70%</div><p>Ռիսկը «Շատ բարձր» գոտուց տեղափոխվել է «Միջին» գոտի։</p>","<p>Միջոցառումները 70%-ով նվազեցնում են ռիսկի միավորը և տանում են ընդունելի գոտի։ Առաջարկվում է պահել KPI և վերահաշվարկել RS-ը յուրաքանչյուր ուղղիչ քայլից հետո։</p>"],
+["<div class='f'>Մատրիցի վանդակ = P × I</div><p>5×5 աղյուսակ՝ գունային գոտիներով՝ կանաչ (1–4), դեղին (5–9), նարնջագույն (10–16), կարմիր (17–25)։</p>","<p><b>Քայլ 1.</b> Գտնել P = 4 տողը։</p><p><b>Քայլ 2.</b> Գտնել I = 5 սյունը։</p><p><b>Քայլ 3.</b> Հատման վանդակը՝ 4 × 5 = 20 (Կարմիր)։</p>","<p>Սկզբնական վանդակ՝ <b>20</b>, մնացորդային վանդակ՝ <b>6</b>։</p>","<p>Կարմիր գոտին (17–25) շատ բարձր ռիսկ է, դեղինը (5–9)՝ միջին։ Մատրիցը ռիսկը ցույց է տալիս տեսողականորեն։</p>","<p>Նույն միջոցառումները, ինչ նախորդ մեթոդում՝ Quality Gates, հետագծելիություն, անկախ աուդիտներ և ուղղիչ գործողությունների հետևում։</p>","<p>P = 2, I = 3, ուրեմն RS = 2 × 3 = <b>6</b> (Դեղին գոտի)։</p>",cp(20,80,6,24)+"<p>Ռիսկը տեղաշարժվում է Կարմիր գոտուց Դեղին՝ արձանագրելով 70% բարելավում։</p>","<p>Մատրիցը հարմար է ղեկավարության համար ռիսկերը համեմատելու և առաջնահերթություն սահմանելու համար։ Առաջարկվում է դրանում պարբերաբար թարմացնել բոլոր 7 ռիսկերի դիրքը։</p>"],
+["<div class='f'>C = (Առկա վերահսկողություններ / Պահանջվող վերահսկողություններ) × 100%</div><p>Մոդելը միավորում է սպառնալիքները, կանխարգելիչ վերահսկողությունները, Top Event-ը, մեղմող վերահսկողությունները և հետևանքները։</p>","<p><b>Քայլ 1.</b> Պահանջվող վերահսկողություններ՝ 4։</p><p><b>Քայլ 2.</b> Առկա են 2-ը (ISO/AS9100, Quality Gates)։</p><p><b>Քայլ 3.</b> C_initial = (2 / 4) × 100% = 50%։</p>","<p>C_initial = <b>50%</b></p>","<p>Վերահսկողության կեսը բացակայում է, ուրեմն Top Event-ին տանող ճանապարհը մասամբ բաց է։</p>","<ul><li>Կանխարգելիչ՝ ISO/AS9100, Quality Gates, Traceability</li><li>Մեղմող՝ անկախ վերջնական աուդիտ, անհապաղ հաղորդում FAA-ին, ուղղիչ գործողությունների պլան</li></ul>","<p>Ներդրվում են մնացած 2 վերահսկողությունները։</p><p>C_residual = (4 / 4) × 100% = <b>100%</b>։</p>",cp("50%",50,"100%",100).replace(/var\(--r\)/,"var(--o)")+"<p>Ծածկույթը աճել է 50 տոկոսային կետով՝ լիարժեք պատճառահետևանքային ծածկույթ։</p>","<p>Bow-Tie-ը ցույց է տալիս ճիշտ որտեղ է բացը՝ պատճառին թե հետևանքին մոտ։ Առաջարկվում է յուրաքանչյուր ռիսկի համար ունենալ նման դիագրամ և ստուգել ծածկույթը 100%-ի համար։</p>"],
+["<p>Սցենարային վերլուծությունը չունի միասնական թվային բանաձև։ Գնահատումը կատարվում է 3 չափանիշով՝ խափանման տևողություն, արտադրական ազդեցություն, արձագանքման գործողություն։ Օրինակային ռիսկ՝ R3 (մատակարարման շղթա)։</p>","<p><b>Քայլ 1.</b> Սահմանել 3 սցենար՝ A (Best), B (Base), C (Worst)։</p><p><b>Քայլ 2.</b> Յուրաքանչյուրին տալ տևողություն՝ մինչև 2 շաբաթ, 2–8 շաբաթ, 8+ շաբաթ։</p><p><b>Քայլ 3.</b> Գնահատել ազդեցությունը և նախանշել արձագանքը։</p>","<p>A՝ չնչին ճշգրտում։ B՝ նկատելի ուշացում։ C՝ էական դանդաղում կամ կանգ։</p>","<p>Որքան երկար է խափանումը, այնքան ավելի ծանր է արձագանքը՝ A-ում վերապլանավորում, B-ում այլընտրանքային մատակարար, C-ում ծրագրի վերակազմավորում։</p>","<ul><li>Այլընտրանքային մատակարարների նախնական որակավորում</li><li>Կրիտիկական պաշարների ռազմավարական պահուստավորում</li></ul>","<p>Այս միջոցառումները նվազեցնում են Worst-Case սցենարի հավանականությունը՝ համակարգը տեղափոխելով Base-Case կանխատեսելի տիրույթ։</p>","<p><b>Սկզբում.</b> Worst-Case-ը (8+ շաբաթ, կանգ) իրատեսական սպառնալիք է։</p><p><b>Հետո.</b> Ռիսկը Base-Case-ում է՝ 2–8 շաբաթ, նկատելի ուշացում, կառավարելի արձագանք։</p>","<p>Մեթոդը լավագույնն է անորոշության պայմաններում պատրաստվածության համար։ Առաջարկվում է մատակարարման շղթայի ամբողջական աուդիտ և դիվերսիֆիկացում։</p>"],
+["<div class='f'>EL = P × L</div><p>P-ն առաջացման հավանականությունն է (տասնորդական), L-ը՝ հնարավոր ֆինանսական կորուստը ($)։ Օրինակային ռիսկ՝ R7 (ֆիքսված գնով պայմանագրեր)։</p>","<p><b>Քայլ 1.</b> P = 30% = 0.30։</p><p><b>Քայլ 2.</b> L = 250 մլն $։</p><p><b>Քայլ 3.</b> EL_initial = 0.30 × 250 = 75 մլն $։</p>","<p>EL_initial = <b>75 մլն ԱՄՆ դոլար</b></p>","<p>Սպասվող կորուստը 75 մլն $ է, այսինքն՝ 250 մլն $ հնարավոր վնասի 30%-ը։ Սա ռիսկը չափում է փողով, ուստի հեշտ է համեմատել ծրագրերի բյուջեի հետ։</p>","<ul><li>Earned Value Management (EVM) ծախսերի իրական ժամանակում վերահսկման համար</li><li>Տեխնիկական փոփոխությունների (Scope creep) խիստ պայմանագրային վերահսկողություն</li><li>Ծախսերի անկախ եռամսյակային աուդիտ</li></ul>","<p>EL_residual = 75 × (1 − 0.40) = <b>45 մլն $</b>։</p>",cp("75 մլն $",75,"45 մլն $",45)+"<div class='f'>ΔEL = 75 − 45 = 30 մլն $ (40% նվազում)</div>","<p>EVM-ը և ծախսային վերահսկողությունը 30 մլն $-ով նվազեցնում են սպասվող կորուստը։ Առաջարկվում է BDS-ում կիրառել EVM բոլոր ֆիքսված գնով պայմանագրերի համար։</p>"]];
+P.forEach((p,i)=>$("#"+p).insertAdjacentHTML("beforeend","<div class='det'>"+D[i].map((h,j)=>`<details${j<2?" open":""}><summary><i>${j+1}</i>${T[j]}</summary><div class='bd'>${h}</div></details>`).join("")+"</div>"));
+tab(0);
+// recs
+const RC=["Թվային ռիսկերի գրանցամատյան (Risk Register) իրական ժամանակում","Յուրաքանչյուր ռիսկին՝ պատասխանատու (Risk Owner) և KPI","Quality Gates-ի խստացում Commercial Airplanes-ում","Մատակարարման շղթայի աուդիտ և դիվերսիֆիկացում (Spirit AeroSystems)","EVM և անկախ եռամսյակային գնահատում BDS-ում","Մնացորդային ռիսկի վերահաշվարկ յուրաքանչյուր միջոցառումից հետո","Լիակատար թափանցիկություն FAA-ի և EASA-ի հետ"];
+$("#rc").innerHTML=RC.map((t,i)=>`<div class="rec" tabindex="0"><span>${i+1}</span>${t}</div>`).join("");
+const up=()=>{const n=$$(".rec.on").length;$("#rm").style.width=n/7*100+"%";$("#done").style.display=n==7?"block":"none"};
+$$(".rec").forEach(r=>{r.onclick=()=>{r.classList.toggle("on");up()};r.onkeydown=e=>{if(e.key=="Enter"||e.key==" "){e.preventDefault();r.click()}}});
+// scroll
+const secs=$$("section"),links=$$("nav a");
+addEventListener("scroll",()=>{const h=document.documentElement;$("#bar").style.width=scrollY/(h.scrollHeight-innerHeight)*100+"%";let c=0;secs.forEach((s,i)=>{if(s.getBoundingClientRect().top<200)c=i});links.forEach((a,i)=>a.classList.toggle("on",i==c))});
+</script></body></html>
